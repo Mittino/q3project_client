@@ -97,6 +97,11 @@ const ProfileForm = React.createClass({
     }
   },
 
+  deleteProfile: function(){
+    console.log("delete clicked");
+    this.props.onDeleteProfile();
+  },
+
   render: function(){
     return(
 
@@ -300,8 +305,15 @@ const ProfileForm = React.createClass({
                 </div>
                 <br></br>
                 <div className="row">
-                  <div className="col-sm-12 profileSubmitButton">
+                  <div className="col-sm-3 col-xs-2">
+                  </div>
+                  <div className="col-md-3 col-md-offset-3 profileSubmitButton">
                     <Button type="submit" label="Submit"
+                    className="buttonBackground"
+                    backgroundColor="#90C15B" />
+                  </div>
+                  <div className="col-md-3 profileSubmitButton">
+                    <Button onClick={this.deleteProfile} label="Delete Profile"
                     className="buttonBackground"
                     backgroundColor="#90C15B" />
                   </div>

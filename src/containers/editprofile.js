@@ -60,12 +60,17 @@ var editProfileContainer = React.createClass({
 
   },
 
+  handleDeleteProfile(formState){
+    console.log("got the delete");
+  },
+
 
   render: function(){
     var profileForm = this.state.profileDataLoaded = (true) ?
     <ProfileForm
       profileData={this.state.profileData}
       onProfileSubmit={this.handleProfileSubmit}
+      onDeleteProfile={this.handleDeleteProfile}
       disabled={true}
       /> : null;
 
