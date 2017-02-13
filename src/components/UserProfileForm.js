@@ -98,8 +98,8 @@ const ProfileForm = React.createClass({
   },
 
   deleteProfile: function(){
-    console.log("delete clicked");
-    this.props.onDeleteProfile();
+    console.log("delete clicked", this.state);
+    this.props.onDeleteProfile(this.state.userId);
   },
 
   render: function(){

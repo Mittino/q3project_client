@@ -4,7 +4,7 @@ import React from 'react';
 import Post from './Post';
 import request from 'superagent';
 
-const DATABASE_URL = "https://artops-server.herokuapp.com";
+const DATABASE_URL = "localhost:5000";
 
 
 const PostsContainer = React.createClass({

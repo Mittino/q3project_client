@@ -5,7 +5,7 @@ import { Router, browserHistory } from 'react-router'
 import routes from '../router'
 import Nav from '../components/Nav';
 
-const DATABASE_URL = "https://artops-server.herokuapp.com";
+const DATABASE_URL = "localhost:5000";
 
 var editProfileContainer = React.createClass({
 
@@ -60,8 +60,20 @@ var editProfileContainer = React.createClass({
 
   },
 
-  handleDeleteProfile(formState){
-    console.log("got the delete");
+  handleDeleteProfile(id){
+    console.log("got the delete", id);
+    request
+    .delete(DATABASE_URL + "/api/users/" + id)
+    .end(function(err, res){
+      if (err){
+        console.log(err);
+        alert ("error removing user")
+      } else {
+        console.log(res);
+        sessionStorage.removeItem('id');
+        browserHistory.push("/");
+      }
+    });
   },
 
 

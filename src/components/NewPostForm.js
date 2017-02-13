@@ -27,7 +27,7 @@ const styles = {
   }
 };
 
-var DATABASE_URL = 'https://artops-server.herokuapp.com';
+var DATABASE_URL = 'localhost:5000';
 
 var CreatePost = React.createClass({
   getInitialState () {
